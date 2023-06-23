@@ -13,11 +13,12 @@ clients of code. It involves three steps:
 A more detailed discussion of the pattern, with examples, may be found in
 [Danilo Sato's article on Parallel Change](https://martinfowler.com/bliki/ParallelChange.html).
 
-### The Exercise
+## Your Task
+Change the class ShoppingCart in the package field.
 
-The purpose of this exercise is to change the shopping cart from just
-supporting one item of shopping to multiple. Specifically, taking the Ruby example,
-there is a variable called `@price`. Instead, to support multiple prices,
-instead the developer should now introduce a `@prices` collection object (an array).
-Do this in such a way that the unit tests provided remain green (this is a refactoring, after all). If need be
-introduce more tests to enhance safety.
+The class should be handle multiple int items instead of a single one.
+
+Tests have already been written.
+
+## Rules
+The tests must not be red at any time. No compile-errors, no failures. (The only exception is for a few seconds while you write a single line of code.)
