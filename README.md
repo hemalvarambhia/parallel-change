@@ -2,7 +2,7 @@
 
 ### What is Parallel Change?
 
-Also known as Expand and Contract, this is a pattern that can be used to evolve a design safely by introducing 
+Also known as Expand and Contract, this is a pattern that can be used to evolve a software design by introducing 
 backwards compatible changes without breaking clients of the existing code. It involves three steps:
 
 1. expand (add the new element - class, method, variable);
