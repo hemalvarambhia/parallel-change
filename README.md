@@ -14,10 +14,7 @@ A more detailed discussion of the pattern, with examples, may be found in
 [Danilo Sato's article on Parallel Change](https://martinfowler.com/bliki/ParallelChange.html).
 
 ## Your Task
-Change the class ShoppingCart in the package field.
-
-The class should be handle multiple int items instead of a single one.
-
+Using Parallel Change, modify the class ShoppingCart to handle multiple items instead of a single one.
 Tests have already been written.
 
 ## Rules
