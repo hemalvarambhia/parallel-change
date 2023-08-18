@@ -8,6 +8,7 @@ class ShoppingCart
 
   def add(price)
     @price = price
+    @prices << price
   end
 
   def number_of_products
