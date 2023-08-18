@@ -2,9 +2,7 @@ class ShoppingCart
   def initialize
     #
     # the goal is to remove this field, replacing with
-    # @prices = []
-    #
-
+    @prices = []
     @price = 0
   end
 
