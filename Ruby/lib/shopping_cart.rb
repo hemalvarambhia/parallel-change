@@ -16,7 +16,7 @@ class ShoppingCart
   end
 
   def calculate_total_price
-    @price
+    @prices.sum(0)
   end
 
   def has_discount?
