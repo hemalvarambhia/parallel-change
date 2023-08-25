@@ -25,7 +25,7 @@ describe "ShoppingCart" do
   end
 
   context "when contains at least one premium item" do
-    it "has discount" do
+    it "has discount when the shopping card contains exactly one premium item over 100 currency units" do
       shopping_cart = ShoppingCart.new
       shopping_cart.add(100)
       expect(shopping_cart.has_discount?).to be true
