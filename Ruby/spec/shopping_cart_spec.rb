@@ -24,21 +24,19 @@ describe "ShoppingCart" do
     expect(shopping_cart.calculate_total_price).to eq(199)
   end
 
-  context "when contains at least one premium item" do
-    it "has discount when the shopping card contains exactly one premium item over 100 currency units" do
-      shopping_cart = ShoppingCart.new
-      shopping_cart.add(100)
-      expect(shopping_cart.has_discount?).to be true
-    end
+  it "has discount when the shopping card contains exactly one premium item over 100 currency units" do
+    shopping_cart = ShoppingCart.new
+    shopping_cart.add(100)
+    expect(shopping_cart.has_discount?).to be true
+  end
 
-    it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
-      shopping_cart = ShoppingCart.new
+  it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
+    shopping_cart = ShoppingCart.new
 
-      shopping_cart.add(10)
-      shopping_cart.add(100)
+    shopping_cart.add(10)
+    shopping_cart.add(100)
 
-      expect(shopping_cart.has_discount?).to be true
-    end
+    expect(shopping_cart.has_discount?).to be true
   end
 
   context "when all items are cheap" do
