@@ -44,4 +44,11 @@ describe "ShoppingCart" do
     shopping_cart.add(10)
     expect(shopping_cart.has_discount?).to be false
   end
+
+  it "does not have discount when the cart contains multiple cheap (< 100) items of shopping" do
+    shopping_cart = ShoppingCart.new
+    shopping_cart.add(10)
+    shopping_cart.add(99)
+    expect(shopping_cart.has_discount?).to be false
+  end
 end
