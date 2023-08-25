@@ -3,11 +3,9 @@ class ShoppingCart
     #
     # the goal is to remove this field, replacing with
     @prices = []
-    @price = 0
   end
 
   def add(price)
-    @price = price
     @prices << price
   end
 
