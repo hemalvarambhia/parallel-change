@@ -12,7 +12,7 @@ class ShoppingCart
   end
 
   def number_of_products
-    1
+    @prices.count
   end
 
   def calculate_total_price
