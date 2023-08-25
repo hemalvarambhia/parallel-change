@@ -39,11 +39,9 @@ describe "ShoppingCart" do
     expect(shopping_cart.has_discount?).to be true
   end
 
-  context "when all items are cheap" do
-    it "does not have discount" do
-      shopping_cart = ShoppingCart.new
-      shopping_cart.add(10)
-      expect(shopping_cart.has_discount?).to be false
-    end
+  it "does not have discount when the cart contains exactly one cheap (< 100) item of shopping" do
+    shopping_cart = ShoppingCart.new
+    shopping_cart.add(10)
+    expect(shopping_cart.has_discount?).to be false
   end
 end
