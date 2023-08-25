@@ -5,7 +5,7 @@ class AuthenticationService
   # def authenticated?(role, user_id)
   #
 
-  def authenticated?(user_id)
+  def authenticated?(role = '', user_id)
     user_id == 12345
   end
 end
