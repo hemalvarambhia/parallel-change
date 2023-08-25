@@ -30,6 +30,15 @@ describe "ShoppingCart" do
       shopping_cart.add(100)
       expect(shopping_cart.has_discount?).to be true
     end
+
+    it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
+      shopping_cart = ShoppingCart.new
+
+      shopping_cart.add(10)
+      shopping_cart.add(100)
+
+      expect(shopping_cart.has_discount?).to be true
+    end
   end
 
   context "when all items are cheap" do
