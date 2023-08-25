@@ -13,6 +13,17 @@ describe "ShoppingCart" do
     expect(shopping_cart.calculate_total_price).to eq(10)
   end
 
+  it 'contains multiple shopping items' do
+    shopping_cart = ShoppingCart.new
+
+    shopping_cart.add(19)
+    shopping_cart.add(80)
+    shopping_cart.add(100)
+
+    expect(shopping_cart.number_of_products).to eq(3)
+    expect(shopping_cart.calculate_total_price).to eq(199)
+  end
+
   context "when contains at least one premium item" do
     it "has discount" do
       shopping_cart = ShoppingCart.new
