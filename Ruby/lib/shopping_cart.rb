@@ -20,7 +20,7 @@ class ShoppingCart
   end
 
   def has_discount?
-    @price >= 100
+    @prices.any? { |price| price >= 100 }
   end
 end
 
