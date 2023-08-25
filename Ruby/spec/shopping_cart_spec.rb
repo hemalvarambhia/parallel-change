@@ -28,8 +28,8 @@ describe "ShoppingCart" do
     expect(shopping_cart.calculate_total_price).to eq(199)
   end
 
-  describe 'applying discounts' do
-    it "shopping cart contains exactly one premium item over 100 currency units" do
+  describe 'qualifying for discounts' do
+    example "shopping cart containing exactly one premium item over 100 currency units qualifies for a discount" do
       shopping_cart = ShoppingCart.new
 
       shopping_cart.add(100)
@@ -37,7 +37,7 @@ describe "ShoppingCart" do
       expect(shopping_cart.has_discount?).to be true
     end
 
-    it "has discount when the shopping cart contains only premium item over 100 currency units" do
+    example "shopping cart containing only premium items over 100 currency units qualifies for a discount" do
       shopping_cart = ShoppingCart.new
 
       shopping_cart.add(101)
@@ -46,7 +46,7 @@ describe "ShoppingCart" do
       expect(shopping_cart.has_discount?).to be true
     end
 
-    it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
+    example "shopping cart containing at least one premium item over 100 currency units qualifies for a discount" do
       shopping_cart = ShoppingCart.new
 
       shopping_cart.add(10)
@@ -55,7 +55,7 @@ describe "ShoppingCart" do
       expect(shopping_cart.has_discount?).to be true
     end
 
-    it "does not have discount when the cart contains exactly one cheap (< 100) item of shopping" do
+    example "shopping cart containing exactly one cheap (< 100) item of shopping does not qualify for a discount" do
       shopping_cart = ShoppingCart.new
 
       shopping_cart.add(10)
@@ -63,7 +63,7 @@ describe "ShoppingCart" do
       expect(shopping_cart.has_discount?).to be false
     end
 
-    it "does not have discount when the cart contains multiple cheap (< 100) items of shopping" do
+    it "shopping cart containing only cheap (< 100) items of shopping does not qualify for a discount" do
       shopping_cart = ShoppingCart.new
 
       shopping_cart.add(10)
