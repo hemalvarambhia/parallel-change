@@ -28,46 +28,49 @@ describe "ShoppingCart" do
     expect(shopping_cart.calculate_total_price).to eq(199)
   end
 
-  it "has discount when the shopping card contains exactly one premium item over 100 currency units" do
-    shopping_cart = ShoppingCart.new
+  describe 'applying discounts' do
+    it "shopping cart contains exactly one premium item over 100 currency units" do
+      shopping_cart = ShoppingCart.new
 
-    shopping_cart.add(100)
+      shopping_cart.add(100)
 
-    expect(shopping_cart.has_discount?).to be true
+      expect(shopping_cart.has_discount?).to be true
+    end
+
+    it "has discount when the shopping cart contains only premium item over 100 currency units" do
+      shopping_cart = ShoppingCart.new
+
+      shopping_cart.add(101)
+      shopping_cart.add(100)
+
+      expect(shopping_cart.has_discount?).to be true
+    end
+
+    it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
+      shopping_cart = ShoppingCart.new
+
+      shopping_cart.add(10)
+      shopping_cart.add(100)
+
+      expect(shopping_cart.has_discount?).to be true
+    end
+
+    it "does not have discount when the cart contains exactly one cheap (< 100) item of shopping" do
+      shopping_cart = ShoppingCart.new
+
+      shopping_cart.add(10)
+
+      expect(shopping_cart.has_discount?).to be false
+    end
+
+    it "does not have discount when the cart contains multiple cheap (< 100) items of shopping" do
+      shopping_cart = ShoppingCart.new
+
+      shopping_cart.add(10)
+      shopping_cart.add(99)
+
+      expect(shopping_cart.has_discount?).to be false
+    end
   end
 
-  it "has discount when the shopping cart contains only premium item over 100 currency units" do
-    shopping_cart = ShoppingCart.new
-
-    shopping_cart.add(101)
-    shopping_cart.add(100)
-
-    expect(shopping_cart.has_discount?).to be true
-  end
-
-  it "has discount when the shopping cart contains at least one premium item over 100 currency units" do
-    shopping_cart = ShoppingCart.new
-
-    shopping_cart.add(10)
-    shopping_cart.add(100)
-
-    expect(shopping_cart.has_discount?).to be true
-  end
-
-  it "does not have discount when the cart contains exactly one cheap (< 100) item of shopping" do
-    shopping_cart = ShoppingCart.new
-
-    shopping_cart.add(10)
-
-    expect(shopping_cart.has_discount?).to be false
-  end
-
-  it "does not have discount when the cart contains multiple cheap (< 100) items of shopping" do
-    shopping_cart = ShoppingCart.new
-
-    shopping_cart.add(10)
-    shopping_cart.add(99)
-
-    expect(shopping_cart.has_discount?).to be false
-  end
 end
